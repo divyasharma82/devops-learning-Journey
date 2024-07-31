@@ -79,3 +79,112 @@ Terminate Instance:
 Go to the EC2 dashboard.
 Select your instance.
 Click "Instance State" and select "Terminate Instance".
+
+
+🔧 Extended Linux Commands
+Directory Operations
+Create a Directory: mkdir <directory>
+
+Creates a new directory.
+Example: mkdir myFolder
+Remove a Directory: rmdir <directory>
+
+Removes an empty directory.
+Example: rmdir myFolder
+Remove a Directory with Contents: rm -r <directory>
+
+Removes a directory and all its contents.
+Example: rm -r myFolder
+List Contents in Long Format: ls -l
+
+Lists directory contents with detailed information.
+Example: ls -l myFolder
+Rename a Directory: mv <old-directory> <new-directory>
+
+Renames a directory.
+Example: mv myOldFolder myNewFolder
+File Operations
+Create an Empty File: touch <filename>
+
+Creates a new empty file.
+Example: touch myfile.txt
+Copy a File: cp <source> <destination>
+
+Copies a file from source to destination.
+Example: cp myfile.txt /home/user/backup.txt
+Move or Rename a File: mv <source> <destination>
+
+Moves a file or renames it.
+Example: mv myfile.txt /home/user/docs.txt
+Remove a File: rm <filename>
+
+Deletes a file.
+Example: rm myfile.txt
+Viewing File Contents
+Display File Contents: cat <filename>
+
+Displays the entire content of a file.
+Example: cat myfile.txt
+View Beginning of File: head <filename>
+
+Displays the first 10 lines of a file.
+Example: head myfile.txt
+View End of File: tail <filename>
+
+Displays the last 10 lines of a file.
+Example: tail myfile.txt
+Paginate File Contents: less <filename>
+
+Views file contents page by page, allows backward and forward navigation.
+Example: less myfile.txt
+Paginate File Contents: more <filename>
+
+Similar to less, but allows only forward navigation.
+Example: more myfile.txt
+Hidden Files and Directories
+Create a Hidden File: touch .<filename>
+
+Creates a hidden file (hidden files start with a dot).
+Example: touch .hiddenfile
+Create a Hidden Directory: mkdir .<directory>
+
+Creates a hidden directory.
+Example: mkdir .hiddendir
+List All Files Including Hidden: ls -a
+
+Lists all files and directories, including hidden ones.
+Example: ls -a
+File Content Operations
+Display First N Lines: head -n <number> <filename>
+
+Displays the first N lines of a file.
+Example: head -n 5 myfile.txt
+Display Last N Lines: tail -n <number> <filename>
+
+Displays the last N lines of a file.
+Example: tail -n 5 myfile.txt
+Monitor File Changes: tail -f <filename>
+
+Continuously displays new lines added to a file.
+Example: tail -f myfile.txt
+Additional Useful Commands
+Change File Permissions: chmod <permissions> <file>
+
+Changes the permissions of a file.
+Example: chmod 755 myfile.txt
+Change File Owner: chown <owner>:<group> <file>
+
+Changes the owner and group of a file.
+Example: chown user:group myfile.txt
+Check Disk Space Usage: df -h
+
+Shows disk space usage in human-readable format.
+Example: df -h
+Check Memory Usage: free -h
+
+Displays memory usage in human-readable format.
+Example: free -h
+Search for a String in a File: grep <string> <file>
+
+Searches for a specific string in a file.
+Example: grep "search_term" myfile.txt
