@@ -188,3 +188,111 @@ Search for a String in a File: grep <string> <file>
 
 Searches for a specific string in a file.
 Example: grep "search_term" myfile.txt
+
+
+
+🔧 More Essential Linux Commands
+System Management
+Update All Packages: sudo yum update
+
+Updates all installed packages to the latest version.
+Example: sudo yum update
+Install a Package: sudo yum install <package>
+
+Installs a specified package.
+Example: sudo yum install httpd
+List Installed Packages: yum list installed
+
+Lists all installed packages.
+Example: yum list installed
+User and System Information
+Current User: whoami
+
+Displays the current logged-in user.
+Example: whoami
+Show Command Path: which <command>
+
+Displays the path of the specified command.
+Example: which python
+Display Hostname: hostname
+
+Displays the system's hostname.
+Example: hostname
+Network Management
+Network Configuration: ifconfig
+
+Displays network interfaces and configuration.
+Example: ifconfig
+Ping a Host: ping <host>
+
+Checks connectivity to a specified host.
+Example: ping google.com
+Service Management
+List Services: systemctl list-units --type=service
+
+Lists all active services.
+Example: systemctl list-units --type=service
+Start a Service: sudo systemctl start <service>
+
+Starts a specified service.
+Example: sudo systemctl start httpd
+Stop a Service: sudo systemctl stop <service>
+
+Stops a specified service.
+Example: sudo systemctl stop httpd
+Enable a Service: sudo systemctl enable <service>
+
+Enables a service to start at boot.
+Example: sudo systemctl enable httpd
+Disable a Service: sudo systemctl disable <service>
+
+Disables a service from starting at boot.
+Example: sudo systemctl disable httpd
+Text Manipulation and Output
+Print Text to Terminal: echo <text>
+
+Prints the specified text to the terminal.
+Example: echo "Hello, World!"
+Display File with Line Numbers: nl <filename>
+
+Displays file contents with line numbers.
+Example: nl myfile.txt
+Disk and Process Management
+Disk Usage: du -h <directory>
+
+Shows disk usage of a directory in human-readable format.
+Example: du -h /var/log
+List Processes: ps aux
+
+Displays a snapshot of current processes.
+Example: ps aux
+Terminate a Process: kill <pid>
+
+Terminates a process by its PID.
+Example: kill 1234
+File Compression
+Compress a File: tar -czvf <archive-name>.tar.gz <file-or-directory>
+
+Compresses a file or directory into a .tar.gz archive.
+Example: tar -czvf myarchive.tar.gz myfolder
+Extract a Compressed File: tar -xzvf <archive-name>.tar.gz
+
+Extracts a .tar.gz archive.
+Example: tar -xzvf myarchive.tar.gz
+Advanced Commands
+Check Runlevel Information: chkconfig --list
+
+Displays information about system runlevels.
+Example: chkconfig --list
+List Open Files: lsof
+
+Lists open files and the processes that opened them.
+Example: lsof
+Show System Uptime: uptime
+
+Displays how long the system has been running.
+Example: uptime
+Show Mounted Filesystems: mount
+
+Displays all currently mounted filesystems.
+Example: mount
