@@ -1,0 +1,81 @@
+🐧 Linux on AWS EC2: A Beginner's Journey with PuTTY and PuTTYgen
+
+Overview
+Learn how to set up and operate a Linux server on AWS EC2 using PuTTY and PuTTYgen from a Windows machine. This guide will walk you through launching an EC2 instance, connecting to it, and performing basic Linux operations.
+
+🌟 Prerequisites
+An AWS account
+Windows OS
+PuTTY and PuTTYgen installed on your local machine
+🚀 Steps to Get Started
+1. Set Up Your AWS EC2 Instance
+Sign in to AWS Console:
+
+Log in to the AWS Management Console.
+Launch an EC2 Instance:
+
+Navigate to the EC2 dashboard.
+Click "Launch Instance".
+Choose the "Amazon Linux 2 AMI".
+Select an instance type (e.g., t2.micro for free tier eligible).
+Configure instance details and add storage.
+Add tags (optional).
+Configure security group to allow SSH (port 22) from your IP.
+Review and launch the instance.
+Create a new key pair (or use an existing one) and download the .pem file.
+2. Prepare Your Local Machine
+Install PuTTY and PuTTYgen:
+
+Download and install PuTTY and PuTTYgen.
+Convert .pem to .ppk Using PuTTYgen:
+
+Open PuTTYgen.
+Click "Load" and select the downloaded .pem file.
+Click "Save private key" to save the .ppk file.
+3. Connect to Your EC2 Instance Using PuTTY
+Open PuTTY:
+
+In the "Host Name" field, enter ec2-user@<public-ip-address>.
+In "Connection > SSH > Auth", browse and select the .ppk file.
+Establish Connection:
+
+Click "Open" to start the SSH session.
+If prompted about the server’s host key, click "Yes".
+🔧 Essential Linux Commands
+Navigation
+pwd: Print working directory.
+ls: List directory contents.
+cd <directory>: Change directory.
+File Operations
+touch <filename>: Create an empty file.
+mkdir <directory>: Create a new directory.
+rm <filename>: Remove a file.
+rm -r <directory>: Remove a directory and its contents.
+cp <source> <destination>: Copy files or directories.
+mv <source> <destination>: Move or rename files or directories.
+Viewing and Editing Files
+cat <filename>: Display file contents.
+nano <filename>: Open a file in the nano editor.
+vi <filename>: Open a file in the vi editor.
+System Information
+uname -a: Display system information.
+df -h: Show disk space usage.
+top: Display running processes.
+Package Management
+sudo yum update: Update all packages (Amazon Linux).
+sudo yum install <package>: Install a package (Amazon Linux).
+sudo apt-get update: Update package list (Ubuntu).
+sudo apt-get install <package>: Install a package (Ubuntu).
+User and Permissions
+sudo: Execute a command as the superuser.
+chmod <permissions> <file>: Change file permissions.
+chown <owner>:<group> <file>: Change file owner and group.
+adduser <username>: Add a new user.
+passwd <username>: Change a user’s password.
+🛑 Terminate the EC2 Instance
+Once you're done, remember to terminate your EC2 instance to avoid charges:
+
+Terminate Instance:
+Go to the EC2 dashboard.
+Select your instance.
+Click "Instance State" and select "Terminate Instance".
