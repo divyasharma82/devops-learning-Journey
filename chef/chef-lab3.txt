@@ -1,1 +1,1 @@
-chef-lab3:Create role in chef.
+chef-lab3:Create role in chef and make runlist step automatic.
