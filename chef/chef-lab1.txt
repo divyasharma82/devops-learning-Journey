@@ -57,5 +57,125 @@ end
 
 ----recipe successfully created---------------------------------------------
 chef-lab 2:Insert linux command create user and group and run list.
+# apache-cookbook/recipes/default.rb
+
+# Install Apache package
+package 'httpd' do
+  action :install
+end
+
+# Ensure the Apache service is enabled and started
+service 'httpd' do
+  action [:enable, :start]
+end
+
+# Create a simple home page
+file '/var/www/html/index.html' do
+  content '<html>
+  <body>
+    <h1>Hello, world!</h1>
+  </body>
+  </html>'
+  action :create
+end
+
+# Run additional Linux commands
+bash 'run_additional_commands' do
+  code <<-EOH
+    echo "Running additional commands..."
+    pwd
+    whoami
+  EOH
+  action :run
+end
+
 
 chef-lab 3:Run multiple recipes .
+Step-1)chef generate cookbook lamp-stack
+
+Step-2) Generate two recipe first apache second mysql.
+
+Step-3)edit both the recipe
+---apache-recipe.rb 
+
+# Install Apache package
+package 'httpd' do
+  action :install
+end
+
+# Ensure the Apache service is enabled and started
+service 'httpd' do
+  action [:enable, :start]
+end
+
+# Create a simple home page
+file '/var/www/html/index.html' do
+  content '<html>
+  <body>
+    <h1>Hello, world!</h1>
+  </body>
+  </html>'
+  action :create
+end
+
+---mysql-recipe.rb 
+
+# Install MySQL server package
+package 'mysql-server' do
+  action :install
+end
+
+# Ensure the MySQL service is enabled and started
+service 'mysqld' do
+  action [:enable, :start]
+end
+
+# Create a MySQL configuration file
+file '/etc/mysql/conf.d/custom.cnf' do
+  content '[mysqld]
+  bind-address = 0.0.0.0
+  '
+  action :create
+end
+
+Step-4)Create a default.rb recipe to include both apache and mysql recipes:
+ lamp-stack/recipes/default.rb
+
+# Include the apache recipe
+include_recipe 'lamp-stack::apache'
+
+# Include the mysql recipe
+include_recipe 'lamp-stack::mysql'
+
+
+---------------------------------------------------------------------------------
+Chef-lab-5)Create user and group.
+Step(1)---chef generate cookbook user-management
+
+Step(2)---chef generate recipe user-group-recipe
+
+Step(3)---open a file using vi editor
+
+# Create a group
+group 'developers' do
+  action :create
+end
+
+# Create a user and add to the group
+user 'devuser' do
+  comment 'Developer User'
+  uid '1234'
+  gid 'developers'
+  home '/home/devuser'
+  shell '/bin/bash'
+  password 'password_hash'  # You should use an encrypted password hash here
+  action :create
+end
+
+# Create a home directory for the user
+directory '/home/devuser' do
+  owner 'devuser'
+  group 'developers'
+  mode '0755'
+  action :create
+end
