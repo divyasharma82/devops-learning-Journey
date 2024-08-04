@@ -1,0 +1,45 @@
+What is ansible:-Ansible is an open-source IT automation tool, 
+used for configuration management, application deployment, 
+orchestration, and provisioning. It automates tasks such as 
+installing software, configuring systems, and managing servers.
+
+Why Use Ansible?
+>>Simple to Learn and Use: Ansible uses a simple, human-readable language (YAML) to define automation jobs, making it easy for new users to understand and write automation scripts.
+
+>>Agentless: Unlike other automation tools, Ansible does not require any agents to be installed on remote systems. It uses SSH for communication.
+
+>>Powerful and Flexible: Ansible can manage a wide range of tasks, from simple to complex automation processes, across many different environments.
+
+>>Efficient and Scalable: Ansible can efficiently manage and automate large-scale environments without requiring extensive resources.
+
+
+Advantages of Ansible
+>>Agentless: No need to install any software on the managed nodes.
+
+>>Easy to Learn: Uses YAML for configuration, which is easy to read and write.
+
+>>Idempotent: Ensures that multiple executions lead to the same state, avoiding unintended changes.
+
+>>Modular: Extensive collection of modules to perform various tasks.
+
+>>Flexible: Can be used for various automation tasks including configuration management, application deployment, and orchestration.
+
+>>Powerful: Integrates well with other tools and supports complex workflows.
+
+Disadvantages of Ansible
+>>Performance: Can be slower compared to agent-based systems for large-scale environments due to the overhead of SSH connections.
+
+>>Limited Windows Support: Primarily designed for Unix-like systems, although Windows support has improved.
+
+>>Complexity with Scale: Managing very large inventories can become complex.
+
+Key Terms
+>>Playbook: YAML file that contains a series of tasks to be executed on managed nodes.
+
+>>Inventory: File that lists the hosts to be managed, along with their variables.
+
+>>Task: An action to be performed on a managed node.
+
+>>Role: A way to organize tasks and related files to be reusable.
+
+>>Module: A unit of code that performs a specific task (e.g., yum, apt, service).
